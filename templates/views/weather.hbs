@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {{!-- Headerlink content --}}
+        {{>headerlinks}}
+</head>
+<body>
+
+    {{!-- Navbar content --}}
+    {{>navbar}}
+     
+    <!-- Main header content -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="Search" id="submitBtn">
+                    </form>
+                </div>
+
+                <div class="tempInformation">
+                    <div class="top_layer">
+                        <p id="date"></p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get Output Here</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i> </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer content -->
+    {{>footer}}
+ 
+
+<script>
+        const curDate = document.getElementById("date");
+        
+        let date = new Date();
+
+        const getCurrentDay = () => {
+            var weekday = new Array(7);
+            weekday[0]  =   "Sun";
+            weekday[1]  =  "Mon";
+            weekday[2]  =  "Tue";
+            weekday[3]  =  "Wed";
+            weekday[4]  =  "Thu";
+            weekday[5]  =  "Fri";
+            weekday[6]  =  "Sat";
+
+            let day = weekday[date.getDay()];
+            return day;
+        };
+
+        // =======================================================
+
+        const getCurrentTime = () => {
+            date = new Date();
+            var months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep", 
+                "Oct",
+                "Nov",
+                "Dec"
+            ]
+            let month = months[date.getMonth()];
+            let currdate = date.getDate();
+
+            let hours = date.getHours();
+            let mins = date.getMinutes();
+            let second = date.getSeconds();
+
+            let dt = new Date();
+            console.log(dt);
+
+            function runclock() {
+                return (`${hours}:${mins}:${second}`);
+            }
+
+            
+            let perios = "AM";
+            if(hours > 12){
+                perios = "PM";
+                if(hours > 12) hours -= 12;
+            }
+            if(mins < 10){
+                mins = "0" + mins;
+            }
+
+            return `${month} ${currdate} | ${runclock()}${perios}`;
+        }
+       
+        var iterval = setInterval(() => {
+                curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime();
+            }, 1000);
+    
+</script>
+
+ <script src="js/main.js"></script>
+
+</body>
+</html>

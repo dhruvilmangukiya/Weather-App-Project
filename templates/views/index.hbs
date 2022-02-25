@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      {{!-- Headerlink content --}}
+      {{>headerlinks}}
+</head>
+<body>
+
+    {{!-- Navbar content --}}
+    {{>navbar}}
+     
+    <!-- Main header content-->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row" id="mainHeader">
+                    
+                    <!-- Left side div -->
+                    <div class=" main_header_left">
+                        <p>Welcome to My Weather App</p>
+                        <h1>Get The Letest <span class="text_clr"> Weather </span> Info Of Your City</h1>
+                        <a href="/weather"><button>Check Now</button></a>
+                    </div>
+
+                    <!-- Right side div -->
+                    <div class="main_header_right">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="images/bg1.png" class="w-100" alt="First Slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/Wheather_img2.jpg" class="w-100" alt="Second Slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/Wheather_img3.jpg" class="w-100" alt="Third Slide">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" role="button" href="#carouselExampleControls" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true" id="icon"></span>
+                            </a>
+                            <a class="carousel-control-next" role="button" href="#carouselExampleControls" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true" id="icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer content -->
+    {{>footer}}
+ 
+</body>
+</html>

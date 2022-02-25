@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- Headerlink content --}}
+    {{>headerlinks}}
+</head>
+<body>
+    
+    {{!-- Navbar content --}}
+    {{>navbar}}
+
+    <!-- Main header content-->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- Left side div -->
+                    <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure class="errimg">
+                            <img src="images/404.webp" alt="Error Image" class="img-fluid" srcset="">
+                        </figure>
+                              
+                        <h1>{{errorMsg}}</h1>
+                        <p class="err_p">Sorry we can’t find that page! Don’t worry, though everything is STILL AWESOME!</p>
+                        <a href="/"><button>Go Back</button></a>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer content -->
+    {{>footer}}
+    
+</body>
+</html>
