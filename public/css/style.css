@@ -69,62 +69,48 @@ body{
 /* Main Header Style(Home Page) */
 #mainHeader{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.main-row{
+    margin-top: 80px;
 }
 
 .main_header_left{
-    height: 80rem;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.main_header_left p{
-    font-size: 2.5rem;
-}
-
-.main_header_left h1{
-    font-weight: 600;
-    font-size: 3.5rem;
-    margin: 1rem 0 4rem 0;
-}
-
-.main_header_left .text_clr{
-    color: var(--main-color);
-    font-weight: 600;
+    width: 50%;
+   margin: auto 0;
 }
 
 .main_header_right{
-    height: 80rem;
-    width:60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+   width: 50%;
+   text-align: center;
 }
 
-.main_header_right figure img{
-    filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.3));
+.small-img{
+   width: 70%;
 }
 
-#icon{
-    height: 6rem;
-    width: 3rem;
-    border-radius: 0.5rem;
-    display: block;
-    background-color: black;
-} 
+.main_header_left p{
+   font-size: 2.5rem;
+}
 
+.main_header_left h1{
+   font-weight: 600;
+   font-size: 3.5rem;
+   margin: 1rem 0 3rem 0;
+}
+
+.main_header_left .text_clr{
+   color: var(--main-color);
+   font-weight: 600;
+}
 
 /* All Button CSS Style */
 .main_header_left button {
-    width: 200px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
-    height: 55px;
+    padding: 10px 15px;
     text-align:center;
     border: none;
     background-size: 300% 100%;
@@ -353,9 +339,27 @@ footer p{
 
 
 /* Responsive Code */
-@media (max-width: 768px){
+
+@media only screen and (max-width: 991px){
+    html{
+        font-size: 50%;
+    }
+
+    .main_header_left h1 {
+        font-size: 2.5rem;
+    }
+
+    .main_header_left p {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
 
     /* Navbar Style */
+    html{
+        font-size: 50%;
+    }
     .navbar-nav .nav-link{
         padding: 0 1rem;
         display: inline-block;
@@ -366,10 +370,13 @@ footer p{
         flex-direction: column-reverse;
     }
 
+    .main-row{
+        margin:0;
+    }
+
     .main_header_left{
-        height: auto;
-        width: auto;
-        margin: 5rem 0;
+        width: 100%;
+        margin-bottom: 30px;
     }
 
     .main_header_left p{
@@ -381,9 +388,12 @@ footer p{
     }
 
     .main_header_right{
-        height: auto;
-        width: auto;
+        width: 100%;
         margin-top: 3rem 0;
+    }
+
+    .small-img {
+        width: 75%;
     }
 
     .temp_form{
@@ -422,21 +432,19 @@ footer p{
     }
 }
 
+@media only screen and (max-width: 480px){
+    .small-img {
+        width: 75%;
+    }
+}
 
-@media (max-width: 280px){
+@media only screen and (max-width: 280px){
     /* Navbar Style */
     .navbar a{
         font-size: 1.5rem;
     }
 
     /* Main header(Home Page) */
-    .main_header_left button {
-        width: 110px;
-        font-size: 1.2rem;
-        height: 40px;
-        border-radius: 4rem;
-    }
-
     .main_header_left p{
         font-size: 1.3rem;
     }
@@ -468,12 +476,16 @@ footer p{
 
     .top_layer{
         width: auto;
-        height: 15vh;
+        height: 6vh;
         margin-bottom: 1em;
     }
 
+    .top_layer p {
+        font-size: 1.8rem;
+    }
+
     .main_layer{
-        height: 17rem;
+        height: 22rem;
     }
 
     .main_layer #city_name{

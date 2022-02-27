@@ -26,7 +26,7 @@
                         <p id="date"></p>
                     </div>
                     <div class="main_layer">
-                        <p id="city_name">Get Output Here</p>
+                        <p id="city_name">Get Output Here...</p>
                         <div class="middle_layer data_hide">
                             <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
                             <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i> </p>
@@ -41,7 +41,7 @@
     <!-- Footer content -->
     {{>footer}}
  
-
+ 
 <script>
         const curDate = document.getElementById("date");
         
@@ -83,14 +83,14 @@
             let currdate = date.getDate();
 
             let hours = date.getHours();
-            let mins = date.getMinutes();
+            let minutes = date.getMinutes();
             let second = date.getSeconds();
 
             let dt = new Date();
             console.log(dt);
 
             function runclock() {
-                return (`${hours}:${mins}:${second}`);
+                return (`${hours} : ${minutes} : ${second}`);
             }
 
             
@@ -99,8 +99,17 @@
                 perios = "PM";
                 if(hours > 12) hours -= 12;
             }
-            if(mins < 10){
-                mins = "0" + mins;
+            if(currdate < 10){
+                currdate = "0" + currdate;
+            }
+            if(hours < 10){
+                hours = "0" + hours;
+            }
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+             if(second < 10){
+                second = "0" + second;
             }
 
             return `${month} ${currdate} | ${runclock()}${perios}`;
