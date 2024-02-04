@@ -86,9 +86,6 @@
             let minutes = date.getMinutes();
             let second = date.getSeconds();
 
-            let dt = new Date();
-            console.log(dt);
-
             function runclock() {
                 return (`${hours} : ${minutes} : ${second}`);
             }
@@ -112,12 +109,13 @@
                 second = "0" + second;
             }
 
-            return `${month} ${currdate} | ${runclock()}${perios}`;
+            return `${month} ${currdate} | ${runclock()} ${perios}`;
         }
        
         var iterval = setInterval(() => {
                 curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime();
-            }, 1000);
+                    
+        }, 1000);
     
 </script>
 
